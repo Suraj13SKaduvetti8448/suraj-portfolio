@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import "../styles/custom.css";
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+body {
+  @apply bg-white text-gray-900;
+}
+
+.dark body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+/* ---------- Light Theme ---------- */
+:root {
+  --bg-main: #f8f9fb;
+  --bg-card: #ffffff;
+  --text-main: #111827;
+  --text-body: #4b5563;
+  --text-muted: #6b7280;
+  --border-main: #e5e7eb;
+}
+
+/* ---------- Dark Theme ---------- */
+.dark {
+  --bg-main: #0f172a;
+  --bg-card: #111827;
+  --text-main: #f9fafb;
+  --text-body: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-main: #1f2937;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+@media print {
+  .site-header,
+  .site-footer {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+
